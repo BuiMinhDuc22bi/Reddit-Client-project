@@ -2,9 +2,30 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/orange_dark"
-    >
+    android:background="@color/white">
 
-    <!-- Layout for HomeFragment -->
+    <!-- Top Communities Header -->
+    <TextView
+        android:id="@+id/top_communities_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Top Communities"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_gravity="start"
+        android:gravity="center|start"
+        android:paddingBottom="16dp"
+        android:background="@color/orange_dark"/>
 
+    <!-- ListView for displaying communities -->
+    <ListView
+        android:id="@+id/community_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/grey"
+        android:dividerHeight="1dp"
+        android:paddingBottom="80dp"
+        android:clipToPadding="true"
+        android:layout_marginTop="50dp"/>
 </FrameLayout>

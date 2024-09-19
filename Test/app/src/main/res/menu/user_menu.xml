@@ -12,12 +12,6 @@
         android:icon="@drawable/baseline_group_add_24"
         android:textColor="?android:textColorPrimary">
     </item>
-
-    <item
-        android:id="@+id/nav_setting"
-        android:title="Setting"
-        android:icon="@drawable/baseline_settings_applications_24"
-        android:textColor="?android:textColorPrimary"/>
     <item
         android:id="@+id/nav_change_language"
         android:title="Change Language"
@@ -28,5 +22,24 @@
         android:title="Change Theme"
         android:icon="@drawable/baseline_lightbulb_24"
         android:textColor="?android:textColorPrimary"/>
+
+    <item
+        android:id="@+id/nav_save"
+        android:title="Saved"
+        android:icon="@drawable/baseline_save_alt_24"
+        android:textColor="?android:textColorPrimary"/>
+
+    <item
+        android:id="@+id/nav_log_out"
+        android:title="Log Out"
+        android:icon="@drawable/baseline_logout_24"
+        android:textColor="?android:textColorPrimary"/>
+
+    <item
+        android:id="@+id/nav_setting"
+        android:title="Setting"
+        android:icon="@drawable/baseline_settings_applications_24"
+        android:textColor="?android:textColorPrimary"
+       />
 
 </menu>

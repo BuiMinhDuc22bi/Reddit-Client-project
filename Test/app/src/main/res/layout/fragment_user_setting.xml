@@ -8,13 +8,12 @@
 
 
     <ImageView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:layout_gravity="center"
-        android:background="@drawable/profile_placeholder"
+        android:background="@drawable/mouse_1"
         android:layout_marginTop="50dp"
         >
-
     </ImageView>
 
     <!-- User Name -->
@@ -22,11 +21,26 @@
         android:id="@+id/user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="John Doe"
-        android:textSize="24sp"
+        android:text="Little John"
+        android:textSize="35sp"
         android:textStyle="bold"
         android:layout_gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status : Online"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/green"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="35dp"/>
 
 
 </LinearLayout>

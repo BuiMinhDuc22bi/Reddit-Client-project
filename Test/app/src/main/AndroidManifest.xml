@@ -16,12 +16,12 @@
             android:name=".HomeFragment"
             android:exported="false" />
         <activity
-            android:name=".UserProfile"
+            android:name=".MainActivity"
             android:exported="false"
             android:label="@string/title_activity_user_profile"
             android:theme="@style/Theme.Test" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

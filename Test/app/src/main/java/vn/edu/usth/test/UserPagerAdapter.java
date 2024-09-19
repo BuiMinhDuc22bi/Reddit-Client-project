@@ -14,9 +14,9 @@ public class UserPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0:
-                return new FriendListFragment();
-            case 1:
                 return new FeedListFragment();
+            case 1:
+                return new FriendListFragment();
             case 2:
                 return  new GalleryFragment();
 

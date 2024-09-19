@@ -25,11 +25,16 @@ public class FeedListFragment extends Fragment {
 
         // Example data for Feed List
         ArrayList<Feed> feedList = new ArrayList<>();
-        feedList.add(new Feed("Feed Item 1", R.drawable.x_logo));
-        feedList.add(new Feed("Feed Item 2", R.drawable.baseline_account_circle_24));
-        feedList.add(new Feed("Feed Item 3", R.drawable.baseline_account_circle_white_24));
-        feedList.add(new Feed("Feed Item 4", R.drawable.google_logo));
-        feedList.add(new Feed("Feed Item 5", R.drawable.baseline_remove_red_eye_24));
+        feedList.add(new Feed("Absolute peak @@", R.drawable.dragon_ball_1));
+        feedList.add(new Feed("Can bro cook???", R.drawable.presentation_meme_1));
+        feedList.add(new Feed("uga uga uga ???", R.drawable.monkey_1));
+        feedList.add(new Feed("quack quack !!!!", R.drawable.duck_1));
+        feedList.add(new Feed("chicken.mp3", R.drawable.chiken_1));
+        feedList.add(new Feed("Wrong 'kungflu' panda", R.drawable.panda_shock_1));
+        feedList.add(new Feed("woof woof woof", R.drawable.dog_shock_1));
+        feedList.add(new Feed("meow meow meow!!!", R.drawable.cat_shock_1));
+        feedList.add(new Feed("oh my gotto!!!", R.drawable.soc_meme_1));
+        feedList.add(new Feed("Damn even bear is scared now !@#$%^&*", R.drawable.bear_schok_2));
 
         // Setting up the FeedListAdapter for Feed List
         adapter = new FeedListAdapter(getActivity(), feedList);

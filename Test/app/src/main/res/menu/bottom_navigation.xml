@@ -19,7 +19,7 @@
     <item
         android:id="@+id/navigation_Chat"
         android:icon="@drawable/baseline_chat_bubble_24"
-        android:title="Chat" />
+        android:title="Chat bot" />
     <item
         android:id="@+id/navigation_Inbox"
         android:icon="@drawable/baseline_notifications_24"
