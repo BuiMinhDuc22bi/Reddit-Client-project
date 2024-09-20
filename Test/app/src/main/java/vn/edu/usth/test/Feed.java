@@ -10,6 +10,7 @@ public class Feed {
     private int imageResource;
     private int upvotes;
     private int downvotes;
+    private int share;
     private List<String> comments;  // List to store comments
 
     public Feed(String title, int imageResource) {
@@ -18,6 +19,7 @@ public class Feed {
         this.upvotes = 0;
         this.downvotes = 0;
         this.comments = new ArrayList<>();
+        this.share = 0;
     }
 
     public String getTitle() {
@@ -40,6 +42,8 @@ public class Feed {
         return comments;
     }
 
+    public int getShare(){return share;}
+
     // Increment methods
     public void incrementUpvotes() {
         this.upvotes++;
@@ -48,6 +52,8 @@ public class Feed {
     public void incrementDownvotes() {
         this.downvotes++;
     }
+
+    public void incrementShares(){this.share++;}
 
     public void addComment(String comment) {
         this.comments.add(comment);

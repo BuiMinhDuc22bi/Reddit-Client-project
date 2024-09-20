@@ -20,9 +20,8 @@ import java.util.List;
 public class FeedListAdapter extends ArrayAdapter<Feed> {
 
 
-
     public FeedListAdapter(Context context, List<Feed> feedList) {
-        super(context,0, feedList);
+        super(context, 0, feedList);
 
     }
 
@@ -42,22 +41,21 @@ public class FeedListAdapter extends ArrayAdapter<Feed> {
         ImageButton upButton = convertView.findViewById(R.id.icon_up);
         ImageButton downButton = convertView.findViewById(R.id.icon_down);
         ImageButton commentButton = convertView.findViewById(R.id.icon_comment);
-
+        ImageButton shareButton = convertView.findViewById(R.id.icon_share);
 
         TextView upvoteCount = convertView.findViewById(R.id.upvote_count);
         TextView downvoteCount = convertView.findViewById(R.id.downvote_count);
         TextView commentCount = convertView.findViewById(R.id.comment_count);
-
-        // Populate data (example)
+        TextView shareCount = convertView.findViewById(R.id.share_count);
 
         // Populate the data into the template view using the data object
         imageView.setImageResource(feed.getImageResource());
         titleTextView.setText(feed.getTitle());
 
-
         upvoteCount.setText(String.valueOf(feed.getUpvotes()));
         downvoteCount.setText(String.valueOf(feed.getDownvotes()));
         commentCount.setText(String.valueOf(feed.getComments().size()));
+        shareCount.setText(String.valueOf(feed.getShare()));  // Update share count correctly
 
         // Handle upvote button click
         upButton.setOnClickListener(v -> {
@@ -73,9 +71,14 @@ public class FeedListAdapter extends ArrayAdapter<Feed> {
 
         // Handle comment button click
         commentButton.setOnClickListener(v -> {
-            // Pass the feed object to CommentHelper
             CommentHelper commentHelper = new CommentHelper(getContext(), feed);
             commentHelper.showComments(feed.getComments());
+        });
+
+        // Handle share button click
+        shareButton.setOnClickListener(v -> {
+            feed.incrementShares();
+            shareCount.setText(String.valueOf(feed.getShare()));  // Update the count
         });
 
         // Return the completed view to render on screen

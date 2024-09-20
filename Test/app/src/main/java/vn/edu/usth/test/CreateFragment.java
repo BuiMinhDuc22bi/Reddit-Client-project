@@ -39,7 +39,7 @@ public class CreateFragment extends Fragment {
             bodyInput.setText("");
 
             // Show a Toast to simulate "send" action
-            Toast.makeText(getContext(), "Message has been sent!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Your post has been sent!", Toast.LENGTH_SHORT).show();
         });
 
         return view;

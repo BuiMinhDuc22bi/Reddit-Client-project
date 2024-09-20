@@ -9,6 +9,7 @@
     <color name="cherry">#FF8A0829</color>
     <color name="bgBottomNavigation">#F48652</color>
     <color name="green">#87EF6B</color>
-
+    <color name="blue_light">#0CD6F0</color>
+    <color name="blue_dark">#1545D5</color>
 
 </resources>

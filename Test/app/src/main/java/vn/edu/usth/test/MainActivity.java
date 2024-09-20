@@ -23,6 +23,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import vn.edu.usth.test.User_profile; // or User_profile if you keep that name
+
 
 import java.util.List;
 
@@ -85,21 +87,40 @@ public class MainActivity extends AppCompatActivity {
         accountIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Open the drawer when account icon is clicked
-                drawerLayout.openDrawer(GravityCompat.START);
+                // Open UserProfile fragment
+                User_profile userProfileFragment = new User_profile();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, userProfileFragment) // Make sure this ID matches your layout
+                        .addToBackStack(null) // Add this transaction to the back stack
+                        .commit();
             }
         });
 
         // Set Navigation Item Selected Listener
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected( MenuItem item) {
+            public boolean onNavigationItemSelected(MenuItem item) {
+                Fragment selectedFragment = null;
+
                 if (item.getItemId() == R.id.nav_change_theme) {
                     // Handle Change Theme menu click
                     toggleTheme();
                     drawerLayout.closeDrawer(GravityCompat.START); // Close the drawer
                     return true;
+                } else if (item.getItemId() == R.id.nav_profile) {
+                    // Navigate to User Profile Fragment
+                    selectedFragment = new User_profile();
                 }
+
+                if (selectedFragment != null) {
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragment_container, selectedFragment) // Replace the fragment container with the new fragment
+                            .addToBackStack(null) // Add this transaction to the back stack
+                            .commit();
+                    drawerLayout.closeDrawer(GravityCompat.START); // Close the drawer
+                    return true;
+                }
+
                 return false;
             }
         });
