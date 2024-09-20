@@ -1,11 +1,13 @@
 package vn.edu.usth.test;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,6 +36,19 @@ public class ChatFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chat, container, false);
 
+        // Get the current theme mode from SharedPreferences
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        boolean isDarkMode = preferences.getBoolean("isDarkMode", false);
+
+        // Set the background color based on the theme
+        if (isDarkMode) {
+            view.setBackgroundColor(getResources().getColor(android.R.color.black)); // Dark mode background
+        } else {
+            view.setBackgroundColor(getResources().getColor(android.R.color.white)); // Light mode background
+        }
+
+
+        // The rest of your initialization code...
         textmessage = view.findViewById(R.id.text_message);
         button_message = view.findViewById(R.id.button_message);
         receiveMessage = view.findViewById(R.id.receiveMessage);
@@ -50,6 +65,8 @@ public class ChatFragment extends Fragment {
 
         // Set LayoutManager to RecyclerView
         receiveMessage.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        button_message.setBackgroundColor(getContext().getResources().getColor(android.R.color.holo_blue_dark));
 
         button_message.setOnClickListener(new View.OnClickListener() {
             @Override

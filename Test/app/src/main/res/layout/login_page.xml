@@ -142,7 +142,8 @@
             android:layout_height="60dp"
             android:id="@+id/login_button"
             android:text="Login"
-            app:cornerRadius="32dp"/>
+            app:cornerRadius="32dp"
+            android:backgroundTint="@color/orange_dark"/>
 
         <View
             android:layout_width="wrap_content"

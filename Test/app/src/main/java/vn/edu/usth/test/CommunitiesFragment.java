@@ -1,6 +1,8 @@
 package vn.edu.usth.test;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +44,17 @@ public class CommunitiesFragment extends Fragment {
         // Initialize the adapter and set it to the ListView
         adapter = new CommunityListAdapter(getActivity(), communitiesList);
         communitiesListView.setAdapter(adapter);
+
+        // Get the current theme mode from SharedPreferences
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        boolean isDarkMode = preferences.getBoolean("isDarkMode", false);
+
+        // Set the background color based on the theme
+        if (isDarkMode) {
+            view.setBackgroundColor(getResources().getColor(android.R.color.black)); // Dark mode background
+        } else {
+            view.setBackgroundColor(getResources().getColor(android.R.color.white)); // Light mode background
+        }
 
         return view;
     }

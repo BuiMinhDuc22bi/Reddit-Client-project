@@ -1,5 +1,6 @@
 package vn.edu.usth.test;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -110,7 +111,13 @@ public class MainActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.nav_profile) {
                     // Navigate to User Profile Fragment
                     selectedFragment = new User_profile();
+                } else if(item.getItemId() == R.id.nav_log_out){
+                    // Log out and go to LoginPage Activity
+                    Intent intent = new Intent(MainActivity.this, LoginPage.class);
+                    startActivity(intent);
+                    return true;
                 }
+
 
                 if (selectedFragment != null) {
                     getSupportFragmentManager().beginTransaction()
@@ -158,24 +165,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    // Method to toggle theme
     private void toggleTheme() {
-        // Get the current theme mode from SharedPreferences
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         boolean isDarkMode = preferences.getBoolean("isDarkMode", false);
 
-        // Toggle between light and dark mode
         if (isDarkMode) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO); // Switch to light theme
+            // Save background color for light mode
+            preferences.edit().putInt("backgroundColor", android.R.color.white).apply();
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES); // Switch to dark theme
+            // Save background color for dark mode
+            preferences.edit().putInt("backgroundColor", android.R.color.black).apply();
         }
 
         // Save the new theme mode to SharedPreferences
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean("isDarkMode", !isDarkMode); // Save the new state
+        editor.putBoolean("isDarkMode", !isDarkMode);
         editor.apply();
     }
+
 
     @Override
     public void onBackPressed() {
