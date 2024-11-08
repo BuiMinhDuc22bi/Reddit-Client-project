@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="title_activity_user_profile">UserProfileActivity</string>
+    <string name="navigation_drawer_open">Open Drawer</string>
+    <string name="navigation_drawer_close">Close Drawer</string>
+    <string name="UserProfile">User Profile</string>
+    <string name="AddCommunity">Add Community</string>
+    <string name="Setting">Setting</string>
+    <string name="ChangeLanguage">Change Language</string>
+    <string name="Search">Search</string>
+    <string name="friends">Friends</string>
+    <string name="News">News</string>
+    <string name="Gallery">Gallery</string>
+    <string name="Home">Bottom Navigation</string>
+    <string name="Communities">Shop</string>
+    <string name="Create">Gifts</string>
+    <string name="Chat">Cart</string>
+    <string name="Inbox">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

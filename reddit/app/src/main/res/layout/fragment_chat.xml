@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+        <LinearLayout
+            android:id="@+id/header_chat"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/orange_dark"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="R/Chat-Bot"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id ="@+id/receiveMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_bottom"
+        android:layout_below="@+id/header_chat"
+       />
+
+    <RelativeLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding = "20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="85dp"
+        >
+        <EditText
+            android:id="@+id/text_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Say something . .  ."
+            android:layout_toStartOf="@id/button_message"
+            android:textSize="18dp"
+            android:layout_centerVertical="true"/>
+        <Button
+            android:id="@+id/button_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Enter"
+            android:textSize="15dp"
+            android:layout_centerVertical="true"/>
+
+
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

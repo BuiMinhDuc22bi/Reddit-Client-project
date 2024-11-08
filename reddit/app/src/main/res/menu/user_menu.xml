@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_profile"
+        android:title="R/User Profile"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:textColor="?android:textColorPrimary"/>
+
+    <item
+        android:id="@+id/nav_add_community"
+        android:title="Add community"
+        android:icon="@drawable/baseline_group_add_24"
+        android:textColor="?android:textColorPrimary">
+    </item>
+    <item
+        android:id="@+id/nav_change_language"
+        android:title="Change Language"
+        android:icon="@drawable/baseline_language_24"
+        android:textColor="?android:textColorPrimary"/>
+    <item
+        android:id="@+id/nav_change_theme"
+        android:title="Change Theme"
+        android:icon="@drawable/baseline_lightbulb_24"
+        android:textColor="?android:textColorPrimary"/>
+
+    <item
+        android:id="@+id/nav_save"
+        android:title="Saved"
+        android:icon="@drawable/baseline_save_alt_24"
+        android:textColor="?android:textColorPrimary"/>
+
+    <item
+        android:id="@+id/nav_log_out"
+        android:title="Log Out"
+        android:icon="@drawable/baseline_logout_24"
+        android:textColor="?android:textColorPrimary"/>
+
+    <item
+        android:id="@+id/nav_setting"
+        android:title="Setting"
+        android:icon="@drawable/baseline_settings_applications_24"
+        android:textColor="?android:textColorPrimary"
+       />
+
+</menu>

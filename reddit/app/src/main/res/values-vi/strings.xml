@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ứng dụng thử nghiệm</string>
+    <string name="title_activity_user_profile">Hồ sơ người dùng</string>
+    <string name="navigation_drawer_open">Mở ngăn kéo</string>
+    <string name="navigation_drawer_close">Đóng ngăn kéo</string>
+    <string name="UserProfile">Hồ sơ người dùng</string>
+    <string name="AddCommunity">Thêm cộng đồng</string>
+    <string name="Setting">Cài đặt</string>
+    <string name="ChangeLanguage">Thay đổi ngôn ngữ</string>
+    <string name="Search">Tìm kiếm</string>
+    <string name="friends">Bạn bè</string>
+    <string name="News">Tin tức</string>
+    <string name="Gallery">Bộ trưng bày </string>
+    <string name="Home">Trang chủ</string>
+    <string name="Communities">Cộng Đồng</string>
+    <string name="Create">Tạo</string>
+    <string name="Chat">Chat</string>
+    <string name="Inbox">Inbox</string>
+</resources>
