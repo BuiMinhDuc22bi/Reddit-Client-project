@@ -1,5 +1,7 @@
 package vn.edu.usth.test;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +10,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 import com.kwabenaberko.newsapilib.models.response.ArticleResponse;
 import androidx.fragment.app.Fragment;
-import com.kwabenaberko.newsapilib.models.response.ArticleResponse;
 import com.kwabenaberko.newsapilib.models.Article;
 
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import vn.edu.usth.test.FeedListAdapter;
+import vn.edu.usth.test.R;
 
 public class FeedListFragment extends Fragment {
 
@@ -35,6 +38,20 @@ public class FeedListFragment extends Fragment {
 
         // Fetch the articles
         fetchArticles();
+
+        // Set OnItemClickListener for opening the URL
+        feedListView.setOnItemClickListener((parent, view1, position, id) -> {
+            // Get the clicked article
+            vn.edu.usth.test.Article clickedArticle = adapter.getItem(position);
+
+            if (clickedArticle != null) {
+                // Open the article URL in a browser
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(clickedArticle.getUrl()));
+                startActivity(intent);
+            } else {
+                Toast.makeText(getActivity(), "No URL available for this article", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return view;
     }

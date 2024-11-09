@@ -3,13 +3,19 @@ package vn.edu.usth.test;
 public class Notification {
     private String notificationName;
     private int notificationImage;
-    private String notificationText;  // Add this field for notification title
+    private String notificationText;
+    private int postId;
+    private int postImage;
+    private String postText;
 
     // Updated constructor
-    public Notification(String notificationName, int notificationImage, String notificationText) {
+    public Notification(String notificationName, int notificationImage, String notificationText, int postId, int postImage, String postText) {
         this.notificationName = notificationName;
         this.notificationImage = notificationImage;
         this.notificationText = notificationText;
+        this.postId = postId;
+        this.postImage = postImage;
+        this.postText = postText;
     }
 
     public String getNotificationName() {
@@ -34,5 +40,29 @@ public class Notification {
 
     public void setNotificationText(String notificationText) {
         this.notificationText = notificationText;
+    }
+
+    public int getPostId() {
+        return postId;
+    }
+
+    public void setPostId(int postId) {
+        this.postId = postId;
+    }
+
+    public int getPostImage() {
+        return postImage;
+    }
+
+    public void setPostImage(int postImage) {
+        this.postImage = postImage;
+    }
+
+    public String getPostText() {
+        return postText;
+    }
+
+    public void setPostText(String postText) {
+        this.postText = postText;
     }
 }

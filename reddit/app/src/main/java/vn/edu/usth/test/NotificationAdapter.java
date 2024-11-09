@@ -13,26 +13,27 @@ import java.util.List;
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.NotificationHolder> {
     private List<Notification> notificationList;
+    private NotificationClickListener listener;
 
-    public NotificationAdapter(List<Notification> notificationList) {
+    public NotificationAdapter(List<Notification> notificationList, NotificationClickListener listener) {
         this.notificationList = notificationList;
+        this.listener = listener;
     }
 
     @NonNull
     @Override
     public NotificationHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Inflate the correct item layout for each notification
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.notification_item, parent, false);
         return new NotificationHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull NotificationHolder holder, int position) {
-        // Bind data to the views
         Notification notification = notificationList.get(position);
         holder.notificationName.setText(notification.getNotificationName());
         holder.notificationImage.setImageResource(notification.getNotificationImage());
         holder.notificationText.setText(notification.getNotificationText());
+        holder.bind(notification, listener);
     }
 
     @Override
@@ -47,10 +48,18 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
         public NotificationHolder(@NonNull View itemView) {
             super(itemView);
-            // Find views in the item layout
             notificationName = itemView.findViewById(R.id.notification_name);
             notificationText = itemView.findViewById(R.id.notification_title);
             notificationImage = itemView.findViewById(R.id.notification_image);
+        }
+
+        public void bind(final Notification notification, final NotificationClickListener listener) {
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onNotificationClick(notification);
+                }
+            });
         }
     }
 }

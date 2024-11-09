@@ -1,14 +1,13 @@
 package vn.edu.usth.test;
 
-
-
 public class Article {
+
     private String title;
     private String description;
     private String url;
     private String urlToImage;
 
-    // Getters and Setters
+    // Getters and setters
     public String getTitle() {
         return title;
     }

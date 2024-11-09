@@ -50,31 +50,6 @@
                 android:layout_marginEnd="10dp"
                 android:layout_margin="20dp"/>
 
-            <!-- Search Bar with Icon -->
-            <LinearLayout
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:background="@color/white">
-
-                <ImageView
-                    android:id="@+id/search_icon"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/baseline_search_24"
-                    android:layout_marginStart="8dp"/>
-
-                <EditText
-                    android:id="@+id/search_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Search"
-                    android:background="@android:color/transparent"
-                    android:padding="8dp"
-                    android:textColor="@android:color/black"/>
-            </LinearLayout>
-
             <!-- Account Icon -->
             <ImageView
                 android:id="@+id/account_icon"
@@ -83,6 +58,35 @@
                 android:layout_marginStart="16dp"
                 android:layout_gravity="center"
                 android:src="@drawable/baseline_account_circle_white_24"/>
+            <!-- Start Live Stream Button -->
+            <Button
+                android:id="@+id/start_live"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="Start a Live Stream"
+                android:layout_marginEnd="16dp"
+                android:onClick="onStartLiveClick" />
+
+            <!-- Watch Live Stream Button -->
+            <Button
+                android:id="@+id/watch_live"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Watch a Live Stream"
+                android:onClick="onWatchLiveClick" />
+
+        </LinearLayout>
+
+        <!-- Buttons Layout (Replace Search Bar with Buttons) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_below="@id/header_layout"
+            android:paddingTop="16dp">
+
+
         </LinearLayout>
 
         <!-- TabLayout and ViewPager -->
